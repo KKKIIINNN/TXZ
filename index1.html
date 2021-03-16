@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta name="renderer" content="webkit" />
+    <link href="index.css" rel="stylesheet" />
+    <script src="jquery-3.4.1.min.js"></script>
+    <script src="validation.js"></script>
+    <link href="layer.css" rel="stylesheet" />
+    <script src="layer.js"></script>
+    <title>闽南师范大学-疫情防控管理平台</title>
+
+    <script type="text/javascript">
+        /*解决苹果返回不刷新问题*/
+        $(function () {
+            var isPageHide = false;
+            window.addEventListener('pageshow', function () {
+                if (isPageHide) {
+                    window.location.reload();
+                }
+            });
+            window.addEventListener('pagehide', function () {
+                isPageHide = true;
+            });
+        });
+    </script>
+    <script language="JavaScript">
+        function startTime()   
+        {   
+            var today=new Date();//定义日期对象   
+            var yyyy = today.getFullYear();//通过日期对象的getFullYear()方法返回年    
+            var MM = today.getMonth()+1;//通过日期对象的getMonth()方法返回月    
+            var dd = today.getDate();//通过日期对象的getDate()方法返回日     
+            var hh=today.getHours();//通过日期对象的getHours方法返回小时   
+            var mm=today.getMinutes();//通过日期对象的getMinutes方法返回分钟     
+            // 如果分钟或小时的值小于10，则在其值前加0，比如如果时间是下午3点20分9秒的话，则显示15：20：09   
+            MM=checkTime(MM);
+            dd=checkTime(dd);
+            mm=checkTime(mm);   
+            document.getElementById('nowDateTimeSpan').innerHTML=yyyy+"."+MM +"."+ dd +" " + hh+":"+mm;   
+            setTimeout('startTime()',1000);//每一秒中重新加载startTime()方法 
+        }   
+
+        function checkTime(i)   
+        {   
+            if (i<10){
+                i="0" + i;
+            }   
+              return i;
+        }  
+    </script>
+    <script language="javascript">
+        function GetRequest() {
+            var url = decodeURI(location.search); //获取url中"?"符后的字串
+            var theRequest = new Object();
+            if (url.indexOf("?") != -1) {
+                var str = url.substr(1);
+                strs = str.split("&");
+                for(var i = 0; i < strs.length; i ++) {
+                    theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);
+                }
+            }
+            return theRequest;
+        }
+        </script>
+</head>
+
+<body onload="startTime()"> 
+<div class="logo">
+    <img src="logo.png" />
+</div>
+<div class="container">
+    <div class="pad">
+        <div class="infos">
+            <p class="title">进出场地监控卡</p>
+            <p class="info" id="myname">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：
+            </script>
+                <script language="javascript">
+                    var Request = new Object();
+                    Request = GetRequest();
+                    var name;
+                    name = Request['name'];
+                    document.write(name);
+                </script></p>
+                <p class="info" id="number">学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号：
+                </script>
+                    <script language="javascript">
+                        var Request = new Object();
+                        Request = GetRequest();
+                        var num;
+                        num = Request['num'];
+                        document.write(num);
+                    </script></p>
+                <p class="info" id="part">所属学院：
+                </script>
+                    <script language="javascript">
+                        var Request = new Object();
+                        Request = GetRequest();
+                        var college;
+                        college = Request['college'];
+                        document.write(college);
+                    </script></p>
+
+            <p class="info">场地名称：校门</p>
+            <p class="info">进出类型：进</p>
+            <p class="info" id="cardTIme">扫描时间：<font><span id="nowDateTimeSpan"></span></font></p>
+        </div>
+        <div class="codebox">
+            <div class="codeimg">
+                <img src="QR.png" />
+            </div>
+            <div class="lb"></div>
+            <div class="rb"></div>
+        </div>
+    </div>
+</div>
+<link href="MonitoringCard.css" rel="stylesheet" />
+        <link href="menustyle.css" rel="stylesheet" />
+        <script src="menu.js"></script>
+        <div id="cd-nav" class="is-fixed">
+            <a href="javascript:void(0)" class="cd-nav-trigger"><span></span></a>
+            <nav id="cd-main-nav">
+                <ul>
+                        <li>
+                            <a href="http://dxg.mnnu.edu.cn/SPCP/Web/Account/ChooseSys">
+                                <img src="icon1.png" /> 返回首页
+                            </a>
+                        </li>
+                                        <li>
+                        <a href="http://dxg.mnnu.edu.cn/SPCP/Web/Account/Logout">
+                            <img src="icon3.png" /> 安全退出
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+</body>
+</html>
