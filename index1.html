@@ -49,7 +49,7 @@
     </script>
     <script language="javascript">
         function GetRequest() {
-            var url = decodeURI(location.search); //获取url中"?"符后的字串
+            var url = decodeURI(location.search);
             var theRequest = new Object();
             if (url.indexOf("?") != -1) {
                 var str = url.substr(1);
@@ -71,24 +71,21 @@
     <div class="pad">
         <div class="infos">
             <p class="title">进出场地监控卡</p>
-            <p class="info" id="myname">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：
-                <script language="javascript">
+            <p class="info" id="myname">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：<script language="javascript">
                     var Request = new Object();
                     Request = GetRequest();
                     var name;
                     name = Request['name'];
                     document.write(name);
                 </script></p>
-                <p class="info" id="number">学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号：
-                    <script language="javascript">
+                <p class="info" id="number">学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号：<script language="javascript">
                         var Request = new Object();
                         Request = GetRequest();
                         var num;
                         num = Request['num'];
                         document.write(num);
                     </script></p>
-                <p class="info" id="part">所属学院：
-                    <script language="javascript">
+                <p class="info" id="part">所属学院：<script language="javascript">
                         var Request = new Object();
                         Request = GetRequest();
                         var college;
