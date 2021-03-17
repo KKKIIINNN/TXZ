@@ -28,19 +28,17 @@
     <script language="JavaScript">
         function startTime()   
         {   
-            var today=new Date();//定义日期对象   
-            var yyyy = today.getFullYear();//通过日期对象的getFullYear()方法返回年    
-            var MM = today.getMonth()+1;//通过日期对象的getMonth()方法返回月    
-            var dd = today.getDate();//通过日期对象的getDate()方法返回日     
-            var hh=today.getHours();//通过日期对象的getHours方法返回小时   
-            var mm=today.getMinutes();//通过日期对象的getMinutes方法返回分钟     
-            // 如果分钟或小时的值小于10，则在其值前加0，比如如果时间是下午3点20分9秒的话，则显示15：20：09   
+            var today=new Date();
+            var yyyy = today.getFullYear();
+            var MM = today.getMonth()+1;
+            var dd = today.getDate();
+            var hh=today.getHours();
+            var mm=today.getMinutes();
             MM=checkTime(MM);
             dd=checkTime(dd);
             mm=checkTime(mm);   
             document.getElementById('nowDateTimeSpan').innerHTML=yyyy+"."+MM +"."+ dd +" " + hh+":"+mm;   
         }   
-
         function checkTime(i)   
         {   
             if (i<10){
@@ -74,7 +72,6 @@
         <div class="infos">
             <p class="title">进出场地监控卡</p>
             <p class="info" id="myname">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：
-            </script>
                 <script language="javascript">
                     var Request = new Object();
                     Request = GetRequest();
@@ -83,7 +80,6 @@
                     document.write(name);
                 </script></p>
                 <p class="info" id="number">学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号：
-                </script>
                     <script language="javascript">
                         var Request = new Object();
                         Request = GetRequest();
@@ -92,7 +88,6 @@
                         document.write(num);
                     </script></p>
                 <p class="info" id="part">所属学院：
-                </script>
                     <script language="javascript">
                         var Request = new Object();
                         Request = GetRequest();
@@ -100,7 +95,6 @@
                         college = Request['college'];
                         document.write(college);
                     </script></p>
-
             <p class="info">场地名称：校门</p>
             <p class="info">进出类型：进</p>
             <p class="info" id="cardTIme">扫描时间：<font><span id="nowDateTimeSpan"></span></font></p>
